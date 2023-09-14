@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-14 04:36:58 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMTQ7MDE6NTQ6MjggUE07Mjk0Ng=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMTQ7MDQ6MzY6NTggUE07NDszMDYz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Examscore1" type="Real" array="False" size=""/>
+            <declare name="examscore2" type="Real" array="False" size=""/>
+            <input variable="EnterExamScore1"/>
+            <input variable="EnterExamScore2"/>
+            <assign variable="ExamScore" expression="60 * 40"/>
+            <output expression="&quot;Users : &quot; &amp;examscores1" newline="True"/>
+            <output expression="&quot;Users : &quot; &amp;examscores2" newline="True"/>
+            <output expression="&quot;total of exam scores&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

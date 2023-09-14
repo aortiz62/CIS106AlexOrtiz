@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-14 05:00:14 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMTQ7MDM6MzM6NDMgUE07Mjk0Mg=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMTQ7MDU6MDA6MTQgUE07NDszMDQ3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="fixed" type="Integer" array="False" size=""/>
+            <declare name="units" type="Integer" array="False" size=""/>
+            <declare name="cost" type="Integer" array="False" size=""/>
+            <input variable="FixedCost"/>
+            <input variable="PricePerUnits"/>
+            <input variable="CostPerUnit"/>
+            <assign variable="BreakEven" expression="Fixed/units/Cost"/>
+            <output expression="&quot;Costs of the units being put into the program&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

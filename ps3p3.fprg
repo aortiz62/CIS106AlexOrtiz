@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-14 03:29:12 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMTQ7MDM6MDM6MDkgUE07Mjk0MQ=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMTQ7MDM6Mjk6MTIgUE07MTszMDUx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Meal" type="Real" array="False" size=""/>
+            <declare name="tip" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="computetip"/>
+            <assign variable="tip" expression="15 * 18 * 20"/>
+            <output expression="&quot;with 15% tip total: 8.00 tip: 1.20 total with tip 9.20&quot;" newline="True"/>
+            <output expression="&quot;with 18% tip total: 17.00 tip: 3.07 total with tip 20.07&quot;" newline="True"/>
+            <output expression="&quot;with 20% tip total: 25.00 tip: 4.00 total with tip 29.00&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
