@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-08 05:22:20 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDQ6MDY6NDQgUE07Mjk0Nw=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDU6MjI6MjAgUE07MjszMDQ5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lname" type="Real" array="False" size=""/>
+            <declare name="friend1" type="Real" array="False" size=""/>
+            <declare name="friend2" type="Real" array="False" size=""/>
+            <declare name="job" type="Real" array="False" size=""/>
+            <declare name="amount" type="Integer" array="False" size=""/>
+            <input variable="lname"/>
+            <input variable="friend1"/>
+            <input variable="friend2"/>
+            <input variable="job"/>
+            <input variable="amount"/>
+            <assign variable="amount" expression="300/3"/>
+            <output expression="&quot;Amount payment: &quot;&amp;lname" newline="True"/>
+            <output expression="&quot;total amount of&quot; &amp;amount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

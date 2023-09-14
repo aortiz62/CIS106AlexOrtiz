@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-08 03:58:40 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDM6MDg6NDEgUE07Mjk0NQ=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDM6NTg6NDAgUE07MTszMDU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="stocks" type="Integer" array="False" size=""/>
+            <declare name="numbershares" type="Integer" array="False" size=""/>
+            <declare name="costshares" type="Real" array="False" size=""/>
+            <input variable="stocks"/>
+            <input variable="numbershares"/>
+            <input variable="costshares"/>
+            <assign variable="stocks" expression="numbershares * costshares"/>
+            <output expression="&quot;users: &quot; &amp;stocks" newline="True"/>
+            <output expression="&quot;total invested&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

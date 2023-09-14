@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-08 04:29:27 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDQ6MjE6MTUgUE07Mjk0Mg=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDQ6Mjk6MjcgUE07MTszMDYx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="make" type="Real" array="False" size=""/>
+            <declare name="model" type="Real" array="False" size=""/>
+            <declare name="msrp" type="Integer" array="False" size=""/>
+            <declare name="discount" type="Integer" array="False" size=""/>
+            <input variable="make"/>
+            <input variable="model"/>
+            <input variable="msrp"/>
+            <input variable="discount"/>
+            <assign variable="discount" expression="msrp * discount"/>
+            <output expression="&quot;amount off&quot;" newline="True"/>
+            <output expression="&quot;discounted price&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

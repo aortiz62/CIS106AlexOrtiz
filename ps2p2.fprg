@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-08 04:06:30 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDM6NTk6MDUgUE07Mjk1MQ=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDQ6MDY6MzAgUE07MTszMDUw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lname" type="String" array="False" size=""/>
+            <declare name="midterm" type="Real" array="False" size=""/>
+            <declare name="final" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="lname"/>
+            <input variable="midterm"/>
+            <input variable="final"/>
+            <assign variable="total" expression="midterm + final"/>
+            <output expression="&quot;student:  &quot;&amp;lname" newline="True"/>
+            <output expression="&quot;earned total points of sum 40% of midterm and 60% of final&quot; &amp;total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

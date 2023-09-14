@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-08 04:35:54 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDQ6Mjk6MjkgUE07Mjk1NQ=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMDg7MDQ6MzU6NTQgUE07MTszMDU4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="radius" type="String" array="False" size=""/>
+            <declare name="area" type="Real" array="False" size=""/>
+            <input variable="radius"/>
+            <input variable="area"/>
+            <assign variable="radius" expression="3.174 * 2"/>
+            <output expression="&quot;Radius of circle&quot;" newline="True"/>
+            <output expression="&quot;area of the cirlce&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
