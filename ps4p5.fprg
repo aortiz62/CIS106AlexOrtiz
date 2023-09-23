@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-23 02:33:27 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMjE7MDY6Mzk6NTMgUE07Mjk1MA=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMjM7MDI6MzM6MjcgUE07MzszMDUz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lname" type="Integer" array="False" size=""/>
+            <declare name="numberofdepenedents" type="Real" array="False" size=""/>
+            <declare name="gross" type="Real" array="False" size=""/>
+            <output expression="&quot;compute adjusted gross income minus dependents times 12000&quot;" newline="True"/>
+            <input variable="lname"/>
+            <input variable="numberofdependents"/>
+            <input variable="grossincome"/>
+            <if expression="gross &#8805; 50000">
+                <then>
+                    <output expression="&quot;income over 50000 tax rate plus 20% $&quot; &amp;gross" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;gross income under 50000 have tax rate of 10% $&quot; &amp;gross" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;Gross total income $&quot; &amp;gross" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

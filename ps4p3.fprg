@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-23 02:19:06 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMjE7MDY6MTI6MzQgUE07Mjk0MA=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMjM7MDI6MTk6MDYgUE07MjszMDUz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="bookorders" type="Real" array="False" size=""/>
+            <declare name="cost" type="Real" array="False" size=""/>
+            <declare name="totalcosts" type="Real" array="False" size=""/>
+            <output expression="&quot;enter number of books to order and cost per book&quot;" newline="True"/>
+            <input variable="bookorders"/>
+            <input variable="cost"/>
+            <if expression="cost &gt; 50.00">
+                <then>
+                    <output expression="&quot;if cost is greater than 50.00 shipping is free $&quot; &amp;cost" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;if cost is 50.00 or under charge 25.00 $&quot; &amp;cost" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;order total and shipping charge $&quot; &amp;totalcosts" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

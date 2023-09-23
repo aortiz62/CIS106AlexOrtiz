@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-21 06:12:19 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMjE7MDU6Mjk6MDUgUE07Mjk0NQ=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMjE7MDY6MTI6MTkgUE07MTszMDUx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="itemprice" type="Real" array="False" size=""/>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="unitprice" type="Real" array="False" size=""/>
+            <declare name="extprice" type="Real" array="False" size=""/>
+            <output expression="&quot;display unit price&quot;" newline="True"/>
+            <input variable="itemprice"/>
+            <assign variable="extprice" expression="qty * itemprice"/>
+            <if expression="itemprice=&quot;A&quot;">
+                <then>
+                    <assign variable="unitprice" expression="10.00"/>
+                </then>
+                <else>
+                    <assign variable="unitprice" expression="20.00"/>
+                </else>
+            </if>
+            <output expression="&quot;unit price of the item is $&quot; &amp;unitprice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

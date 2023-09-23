@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="niera"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-21 06:39:49 PM"/>
+        <attribute name="created" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMjE7MDY6MjY6NTAgUE07Mjk0Mw=="/>
+        <attribute name="edited" value="bmllcmE7VFJBTlFVSUxJVFktTEFOOzIwMjMtMDktMjE7MDY6Mzk6NDkgUE07MTszMDYz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="warrantee" type="Real" array="False" size=""/>
+            <declare name="appliances" type="Real" array="False" size=""/>
+            <declare name="totalcost" type="Real" array="False" size=""/>
+            <output expression="&quot;cost of the appliances&quot;" newline="True"/>
+            <input variable="warrantee"/>
+            <input variable="appliances"/>
+            <if expression="appliances &gt; 1000">
+                <then>
+                    <assign variable="warrantee" expression="5/100 * 1000"/>
+                </then>
+                <else>
+                    <assign variable="appliances" expression="10/100 * 1000"/>
+                </else>
+            </if>
+            <output expression="&quot;cost of the warrantee + appliances $&quot; &amp;totalcost" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
