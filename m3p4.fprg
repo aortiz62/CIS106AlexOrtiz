@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m3p4"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-09 12:00:52 AM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0wOS0wODsxMTo1MTozOCBQTTsyNDAw"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0wOS0wOTsxMjowMDo1MiBBTTsxOzI0ODU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="make" type="String" array="False" size=""/>
+            <declare name="model" type="String" array="False" size=""/>
+            <declare name="msrpamount" type="Real" array="False" size=""/>
+            <declare name="discountpercent" type="Real" array="False" size=""/>
+            <declare name="amountoff" type="Real" array="False" size=""/>
+            <declare name="discountedprice" type="Real" array="False" size=""/>
+            <input variable="make"/>
+            <input variable="model"/>
+            <input variable="msrpamount"/>
+            <input variable="discountpercent"/>
+            <assign variable="amountoff" expression="msrpamount * discountpercent"/>
+            <assign variable="discountedprice" expression="msrpamount - amountoff"/>
+        </body>
+    </function>
+</flowgorithm>

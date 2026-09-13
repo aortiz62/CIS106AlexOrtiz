@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m3p2"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-08 11:29:01 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0wOS0wODsxMToxNDozNCBQTTsyMzk1"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0wOS0wODsxMToyOTowMSBQTTsxOzI1MDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="midtermscore" type="Integer" array="False" size=""/>
+            <declare name="finalexamscore" type="Integer" array="False" size=""/>
+            <declare name="totalscore" type="Real" array="False" size=""/>
+            <input variable="lastname"/>
+            <input variable="midtermscore"/>
+            <input variable="finalexamscore"/>
+            <assign variable="totalscore" expression="midtermscore * finalexamscore"/>
+            <output expression="&quot;your total score is&quot; &amp;totalscore" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
