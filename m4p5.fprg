@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m4p5"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-14 03:23:05 AM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0wOS0xNDswMzoxNTo1MiBBTTsyMzc5"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0wOS0xNDswMzoyMzowNSBBTTsxOzI0ODQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="fixedcost" type="Real" array="False" size=""/>
+            <declare name="priceperunit" type="Real" array="False" size=""/>
+            <declare name="costperunit" type="Real" array="False" size=""/>
+            <declare name="breakevenpoint" type="Real" array="False" size=""/>
+            <output expression="&quot;enter the total costs&quot;" newline="True"/>
+            <input variable="fixedcost"/>
+            <output expression="&quot;enter the sale price per unit&quot;" newline="True"/>
+            <input variable="priceperunit"/>
+            <output expression="&quot;enter the cost per unit&quot;" newline="True"/>
+            <input variable="costperunit"/>
+            <assign variable="breakevenpoint" expression="fixedcost / (priceperunit - costperunit)"/>
+            <output expression="&quot;must sell&quot; &amp;breakevenpoint&amp; &quot;to break even&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

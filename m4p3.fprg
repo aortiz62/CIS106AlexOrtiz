@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m4p3"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-14 02:45:41 AM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0wOS0xNDswMTo0OTo0MCBBTTsyMzgx"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0wOS0xNDswMjo0NTo0MSBBTTsxOzI0ODc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="mealtotal" type="Real" array="False" size=""/>
+            <declare name="tip15" type="Real" array="False" size=""/>
+            <declare name="tip18" type="Real" array="False" size=""/>
+            <declare name="tip20" type="Real" array="False" size=""/>
+            <declare name="total15" type="Real" array="False" size=""/>
+            <declare name="total18" type="Real" array="False" size=""/>
+            <declare name="total20" type="Real" array="False" size=""/>
+            <output expression="&quot;enter the meal total&quot;" newline="True"/>
+            <input variable="mealtotal"/>
+            <assign variable="tip15" expression="mealTotal * .15"/>
+            <assign variable="total15" expression="mealTotal + tip15"/>
+            <assign variable="tip18" expression="mealtotal * .18"/>
+            <assign variable="total18" expression="mealtotal * tip18"/>
+            <assign variable="tip20" expression="mealtotal * .20"/>
+            <assign variable="total20" expression="mealtotal * tip20"/>
+            <output expression="&quot; Meal Total:&quot; &amp;mealTotal" newline="True"/>
+            <output expression="&quot;tip:&quot; &amp;tip15" newline="True"/>
+            <output expression="&quot;total:&quot; &amp;total15" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;meal total:&quot; &amp;mealtotal" newline="True"/>
+            <output expression="&quot;tip:&quot; &amp;tip18" newline="True"/>
+            <output expression="&quot;total:&quot; &amp;total18" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;meal total:&quot; &amp;mealtotal" newline="True"/>
+            <output expression="&quot;tip:&quot; &amp;tip20" newline="True"/>
+            <output expression="&quot;total:&quot; &amp;total20" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
