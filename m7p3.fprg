@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m7p3"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-03 02:20:46 AM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0wMzswMTo0MTo0NiBBTTsyMzY5"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0wMzswMjoyMDo0NiBBTTszOzI0Nzc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="continuechoice" type="String" array="False" size=""/>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="exam1" type="Real" array="False" size=""/>
+            <declare name="exam2" type="Real" array="False" size=""/>
+            <declare name="average" type="Real" array="False" size=""/>
+            <declare name="studentcount" type="Integer" array="False" size=""/>
+            <output expression="&quot;Do you want to run the program? enter yes to continue&quot;" newline="True"/>
+            <input variable="continuechoice"/>
+            <while expression="continuechoice == &quot;yes&quot;">
+                <assign variable="studentcount" expression="studentcount + 1"/>
+                <output expression="&quot;enter last name&quot;" newline="True"/>
+                <input variable="lastname"/>
+                <output expression="&quot;enter exam 1 score&quot;" newline="True"/>
+                <input variable="exam1"/>
+                <output expression="&quot;enter exam 2 score&quot;" newline="True"/>
+                <input variable="exam2"/>
+                <assign variable="average" expression="(exam1 + exam2) / 2"/>
+                <output expression="&quot; &amp;lastName &amp;average&quot;" newline="True"/>
+                <output expression="&quot;Do you want to run it again? enter yes to continue &quot;" newline="True"/>
+                <input variable="continuechoice"/>
+                <output expression="&quot;total number of students is &amp;studentcount&quot;" newline="True"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

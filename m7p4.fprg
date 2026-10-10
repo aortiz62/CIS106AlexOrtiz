@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m7p4"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-03 02:43:27 AM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0wMzswMjoyMDo1MSBBTTsyMzYz"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0wMzswMjo0MzoyNyBBTTsxOzI0Nzk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="continuechoice" type="String" array="False" size=""/>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="hours" type="Integer" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <declare name="grosspay" type="Real" array="False" size=""/>
+            <declare name="totalgross" type="Real" array="False" size=""/>
+            <declare name="empcount" type="Integer" array="False" size=""/>
+            <declare name="avgpay" type="Real" array="False" size=""/>
+            <output expression="&quot;do you want to run the program? type yes to continue&quot;" newline="True"/>
+            <input variable="continuechoice"/>
+            <while expression="continuechoice == &quot;yes&quot;">
+                <output expression="&quot;enter employee data lastname, hours, and rate&quot;" newline="True"/>
+                <input variable="lastname"/>
+                <input variable="hours"/>
+                <input variable="rate"/>
+                <if expression="hours &gt; 40">
+                    <then>
+                        <assign variable="grosspay" expression="(40 * rate) + ((hours - 40) * (rate * 1.5))"/>
+                    </then>
+                    <else>
+                        <assign variable="grosspay" expression="hours * rate"/>
+                    </else>
+                </if>
+                <assign variable="totalgross" expression="totalgross + grosspay"/>
+                <assign variable="empcount" expression="empcount + 1"/>
+                <output expression="&quot;&amp;lastname &amp;grosspay&quot;" newline="True"/>
+                <output expression="&quot;do you want to enter another name? type yes to continue&quot;" newline="True"/>
+                <input variable="continuechoice"/>
+                <output expression="&quot; &amp;empcount &quot;" newline="True"/>
+                <output expression="&quot;&amp;totalgross&quot;" newline="True"/>
+                <assign variable="avgpay" expression="totalgross / empcount"/>
+                <output expression="&quot;&amp;avgpay&quot;" newline="True"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
