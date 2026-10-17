@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m8p3"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-10 04:00:26 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0xMDswMzoyNzo0OCBQTTsyMzkw"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0xMDswNDowMDoyNiBQTTsyOzI0ODc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="salary" type="Real" array="False" size=""/>
+            <declare name="bonus" type="Real" array="False" size=""/>
+            <declare name="totalbonuses" type="Real" array="False" size=""/>
+            <assign variable="totalbonuses" expression="0"/>
+            <open expression="&quot;employees.txt&quot;" mode="read"/>
+            <while expression="NOT EOF(employeefile)">
+                <read variable="lastname"/>
+                <read variable="salary"/>
+                <if expression="salary &gt;= 100000.00">
+                    <then>
+                        <assign variable="bonus" expression="salary * 0.15"/>
+                    </then>
+                    <else>
+                        <assign variable="bonus" expression="salary * 0.10"/>
+                    </else>
+                </if>
+                <assign variable="totalbonuses" expression="totalbonuses + bonus"/>
+                <output expression="lastname &amp; &quot; &quot; &amp; salary &amp; &quot; &quot; &amp; bonus" newline="True"/>
+            </while>
+            <close mode="read"/>
+            <output expression="totalbonuses" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

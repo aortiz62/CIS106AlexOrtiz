@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m8p1"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-10 03:04:29 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0xMDswMTo1NDozMyBQTTsyMzgy"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0xMDswMzowNDoyOSBQTTsxOzI0OTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="principal" type="Real" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <declare name="year" type="Integer" array="False" size=""/>
+            <declare name="interest" type="Real" array="False" size=""/>
+            <declare name="endingbalance" type="Real" array="False" size=""/>
+            <declare name="totalinterest" type="Real" array="False" size=""/>
+            <input variable="principal"/>
+            <input variable="rate"/>
+            <assign variable="totalinterest" expression="0"/>
+            <for variable="year" start="1" end="5" direction="inc" step="1">
+                <assign variable="interest" expression="principal * rate"/>
+                <assign variable="endingbalance" expression="principal + interest"/>
+                <assign variable="totalinterest" expression="totalinterest + interest"/>
+                <output expression="&quot;&amp;year , &amp;principal , &amp;endingbalance&quot;" newline="True"/>
+                <assign variable="principal" expression="endingbalance"/>
+            </for>
+            <output expression="&quot;your total interest is - &amp;totalinterest&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

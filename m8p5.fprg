@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m8p5"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-10 04:39:34 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0xMDswNDoyODoyMSBQTTsyMzgz"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0xMDswNDozOTozNCBQTTsxOzI0OTc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="districtcode" type="String" array="False" size=""/>
+            <declare name="credits" type="Integer" array="False" size=""/>
+            <declare name="studentcouncil" type="Integer" array="False" size=""/>
+            <declare name="tuitionowed" type="Real" array="False" size=""/>
+            <declare name="totaltuition" type="Real" array="False" size=""/>
+            <assign variable="totaltuition" expression="0"/>
+            <assign variable="studentcount" expression="0"/>
+            <open expression="&quot;students.txt&quot;" mode="read"/>
+            <read variable="lastname"/>
+            <while expression="NOT EOF()">
+                <read variable="districtcode"/>
+                <read variable="credits"/>
+                <if expression="districtcode == &quot;I&quot;">
+                    <then>
+                        <assign variable="tuitionowed" expression="credits * 250.00"/>
+                    </then>
+                    <else>
+                        <assign variable="tuitionowed" expression="credits * 500.00"/>
+                    </else>
+                </if>
+                <assign variable="totaltuition" expression="totaltuition + tuitionowed"/>
+                <assign variable="studentcount" expression="studentcount + 1"/>
+                <output expression="lastName &amp; &quot; | Credits: &quot; &amp; credits &amp; &quot; | Tuition Owed: $&quot; &amp; tuitionOwed" newline="True"/>
+                <read variable="lastname"/>
+            </while>
+            <output expression="&quot;Total Tuition Owed: $&quot; &amp; totalTuition &amp; &quot; | Total Students: &quot; &amp; studentCount" newline="True"/>
+            <close mode="read"/>
+        </body>
+    </function>
+</flowgorithm>
