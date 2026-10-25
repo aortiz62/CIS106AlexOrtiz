@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m9p5"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-20 05:21:38 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yMDswNToxNDo1OSBQTTsyMzkx"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yMDswNToyMTozOCBQTTsxOzI0OTQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="districtcode" type="String" array="False" size=""/>
+            <declare name="credithours" type="Integer" array="False" size=""/>
+            <declare name="tuitionowed" type="Real" array="False" size=""/>
+            <declare name="totaltuition" type="Real" array="False" size=""/>
+            <assign variable="totaltuition" expression="0"/>
+            <input variable="lastname"/>
+            <while expression="lastname !=&quot;exit&quot;">
+                <input variable="credithours"/>
+                <input variable="districtcode"/>
+                <assign variable="tuitionowed" expression="computetuition(credithours, districtcode)"/>
+                <assign variable="totaltuition" expression="totaltuition + tuitionowed"/>
+                <output expression="lastname" newline="True"/>
+                <output expression="tuitionowed" newline="True"/>
+                <input variable="lastname"/>
+            </while>
+            <output expression="totaltuition" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m9p4"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-20 05:14:20 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yMDswNTowODo0MSBQTTsyMzg1"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yMDswNToxNDoyMCBQTTsxOzI0ODc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="jobcode" type="String" array="False" size=""/>
+            <declare name="hours" type="Real" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <declare name="grosspay" type="Real" array="False" size=""/>
+            <declare name="totalgrosspay" type="Real" array="False" size=""/>
+            <assign variable="totalgrosspay" expression="0"/>
+            <input variable="lastname"/>
+            <while expression="lastname != &quot;exit&quot;">
+                <input variable="jobcode"/>
+                <input variable="hours"/>
+                <assign variable="rate" expression="GetPayRate(jobCode)"/>
+                <if expression="hours &gt; 40">
+                    <then>
+                        <assign variable="grosspay" expression="(40 * rate) + ((hours - 40) * rate * 1.5)"/>
+                    </then>
+                    <else>
+                        <assign variable="grosspay" expression="hours * rate"/>
+                    </else>
+                </if>
+                <assign variable="totalgrosspay" expression="totalGrossPay + grossPay"/>
+                <output expression="lastname" newline="True"/>
+                <output expression="grosspay" newline="True"/>
+                <input variable="lastname"/>
+            </while>
+            <output expression="totalgrosspay" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

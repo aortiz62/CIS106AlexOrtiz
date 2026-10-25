@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m9p2"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-20 04:56:03 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yMDswNDo1MDowNyBQTTsyMzgz"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yMDswNDo1NjowMyBQTTsxOzI0OTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="hits" type="Integer" array="False" size=""/>
+            <declare name="atbats" type="Integer" array="False" size=""/>
+            <declare name="playercount" type="Integer" array="False" size=""/>
+            <declare name="battingavg" type="Real" array="False" size=""/>
+            <assign variable="playercount" expression="0"/>
+            <input variable="lastname"/>
+            <while expression="lastname != &quot;exit&quot;">
+                <input variable="hits"/>
+                <input variable="atbats"/>
+                <assign variable="battingavg" expression="computeaverage(hits,atbats)"/>
+                <assign variable="playercount" expression="playercount + 1"/>
+                <output expression="lastname" newline="True"/>
+                <output expression="battingavg" newline="True"/>
+                <input variable="lastname"/>
+            </while>
+            <output expression="playercount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
