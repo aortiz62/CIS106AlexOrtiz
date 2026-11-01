@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m10p3"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-27 01:14:55 AM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yNzsxMjo1MTo1NSBBTTsyMzc4"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yNzswMToxNDo1NSBBTTsxOzI0ODM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="runagain" type="String" array="False" size=""/>
+            <declare name="make" type="String" array="False" size=""/>
+            <declare name="model" type="String" array="False" size=""/>
+            <declare name="iselectric" type="String" array="False" size=""/>
+            <declare name="msrp" type="Real" array="False" size=""/>
+            <declare name="salesprice" type="Real" array="False" size=""/>
+            <declare name="totalmsrp" type="Real" array="False" size=""/>
+            <declare name="totalsalesprice" type="Real" array="False" size=""/>
+            <assign variable="totalmsrp" expression="0.0"/>
+            <assign variable="totalsalesprice" expression="0.0"/>
+            <output expression="&quot;do you want to enter a car? (yes or no)&quot;" newline="True"/>
+            <input variable="runagain"/>
+            <while expression="runagain == &quot;yes&quot; || runagain == &quot;Yes&quot;">
+                <output expression="&quot;enter make&quot;" newline="True"/>
+                <input variable="make"/>
+                <output expression="&quot;enter model&quot;" newline="True"/>
+                <input variable="model"/>
+                <output expression="&quot;enter if the car is electric&quot;" newline="True"/>
+                <input variable="iselectric"/>
+                <output expression="&quot;input msrp&quot;" newline="True"/>
+                <input variable="msrp"/>
+                <assign variable="salesprice" expression="computeoutthedoor(msrp, make, model, iselectric)"/>
+                <assign variable="totalmsrp" expression="totalmsrp + msrp"/>
+                <assign variable="totalsaleprice" expression="totalsaleprice + saleprice"/>
+                <output expression="&quot;out the door price: $&quot; &amp; saleprice" newline="True"/>
+                <output expression="&quot;do you want to enter another car? (yes or no):&quot;" newline="True"/>
+                <input variable="runagain"/>
+            </while>
+            <output expression="&quot;sum of all msrps: $&quot; &amp; totalmsrp" newline="True"/>
+            <output expression="&quot;sum of all sales prices: $&quot; &amp; totalsaleprice" newline="True"/>
+        </body>
+    </function>
+    <function name="computeoutthedoor" type="Real" variable="finalprice">
+        <parameters>
+            <parameter name="msrp" type="Real" array="False"/>
+            <parameter name="make" type="String" array="False"/>
+            <parameter name="model" type="Real" array="False"/>
+            <parameter name="iselectric" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="finalprice" type="Real" array="False" size=""/>
+            <declare name="discountpercent" type="Real" array="False" size=""/>
+            <declare name="discountmsrp" type="Real" array="False" size=""/>
+            <if expression="iselectric == &quot;y&quot; || iselectric == &quot;Y&quot;">
+                <then>
+                    <assign variable="discountpercent" expression="0.30"/>
+                </then>
+                <else>
+                    <if expression="make == &quot;Honda&quot; &amp;&amp; model == &quot;Accord&quot;">
+                        <then>
+                            <assign variable="discountpercent" expression="0.10"/>
+                        </then>
+                        <else>
+                            <if expression="make == &quot;Toyota&quot; &amp;&amp; model == &quot;Rav4&quot;">
+                                <then>
+                                    <assign variable="discountpercent" expression="0.15"/>
+                                </then>
+                                <else>
+                                    <assign variable="discountpercent" expression="0.05"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

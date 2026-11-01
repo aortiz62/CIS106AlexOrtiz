@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m10p2"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-27 12:49:31 AM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yNzsxMjoxNjoyNiBBTTsyMzc3"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yNzsxMjo0OTozMSBBTTsxOzI0ODc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="runagain" type="String" array="False" size=""/>
+            <declare name="length" type="Real" array="False" size=""/>
+            <declare name="width" type="Real" array="False" size=""/>
+            <declare name="height" type="Real" array="False" size=""/>
+            <declare name="wallarea" type="Real" array="False" size=""/>
+            <declare name="flatarea" type="Real" array="False" size=""/>
+            <declare name="wallgallons" type="Real" array="False" size=""/>
+            <declare name="ceilinggallons" type="Real" array="False" size=""/>
+            <declare name="floorvarnishgallons" type="Real" array="False" size=""/>
+            <output expression="&quot;Do you want to enter a room?:&quot;" newline="True"/>
+            <input variable="runagain"/>
+            <while expression="runAgain == &quot;Yes&quot; || runAgain == &quot;yes&quot;">
+                <output expression="&quot;enter length&quot;" newline="True"/>
+                <input variable="length"/>
+                <output expression="&quot;enter width&quot;" newline="True"/>
+                <input variable="width"/>
+                <output expression="&quot;enter height&quot;" newline="True"/>
+                <input variable="height"/>
+                <assign variable="wallarea" expression="computewallarea"/>
+                <assign variable="flatarea" expression="computeflatarea"/>
+                <assign variable="wallgallons" expression="wallarea / 50"/>
+                <assign variable="ceilinggallons" expression="flatarea / 50"/>
+                <assign variable="floorvarnishgallons" expression="flatarea / 50"/>
+                <output expression="&quot;Wall Square Footage: &amp;wallArea, Gallons of wall paint: &amp;wallGallons&quot;" newline="True"/>
+                <output expression="&quot;Do you want to enter another room?&quot;" newline="True"/>
+                <input variable="runagain"/>
+            </while>
+        </body>
+    </function>
+    <function name="computeflatarea" type="Real" variable="area">
+        <parameters>
+            <parameter name="length" type="Real" array="False"/>
+            <parameter name="width" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="area" type="Real" array="False" size=""/>
+            <assign variable="area" expression="length * width"/>
+        </body>
+    </function>
+    <function name="computewallarea" type="Real" variable="wallarea">
+        <parameters>
+            <parameter name="length" type="Real" array="False"/>
+            <parameter name="width" type="Real" array="False"/>
+            <parameter name="height" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="wallarea" type="Real" array="False" size=""/>
+            <assign variable="wallarea" expression="(2 * length * height) + (2 * width * height)"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m10p5"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-28 10:27:39 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yODsxMDowOTo1MSBQTTsyMzkx"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yODsxMDoyNzozOSBQTTsxOzI1MDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="county" type="String" array="False" size=""/>
+            <declare name="marketvalue" type="Real" array="False" size=""/>
+            <declare name="assessedvalue" type="Real" array="False" size=""/>
+            <declare name="totalmarketvalue" type="Real" array="False" size=""/>
+            <declare name="totalassessedvalue" type="Real" array="False" size=""/>
+            <assign variable="totalmarketvalue" expression="0"/>
+            <assign variable="totalassessedvalue" expression="0"/>
+            <output expression="&quot;do you want to enter a home?&quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="">
+                <output expression="&quot;enter county&quot;" newline="True"/>
+                <input variable="county"/>
+                <output expression="&quot;enter market value&quot;" newline="True"/>
+                <input variable="marketvalue"/>
+                <assign variable="assessedvalue" expression="computeassessedvalue"/>
+                <assign variable="totalmarketvalue" expression="totalmarketvalue + marketvalue"/>
+                <assign variable="totalassessedvalue" expression="totalassessedvalue + assessedvalue"/>
+                <output expression="&quot;Assessed value for this home is&quot; &amp; assessedValue" newline="True"/>
+                <output expression="&quot;do you want to enter another home?&quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+            <output expression="&quot;total market value of all homes&quot; &amp;totalmarketvalue" newline="True"/>
+            <output expression="&quot;total assessed value of all homes&quot; &amp;totalassessedvalue" newline="True"/>
+        </body>
+    </function>
+    <function name="computeassessedvalue" type="Real" variable="assessedvalue">
+        <parameters>
+            <parameter name="county" type="String" array="False"/>
+            <parameter name="marketvalue" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="assessedvalue" type="Real" array="False" size=""/>
+            <if expression="county == &quot;Cook&quot; or county == &quot;cook&quot;">
+                <then>
+                    <assign variable="percent" expression="0.90"/>
+                </then>
+                <else>
+                    <if expression="county == &quot;DuPage&quot; or county == &quot;dupage&quot;">
+                        <then>
+                            <assign variable="percent" expression="0.80"/>
+                        </then>
+                        <else>
+                            <if expression="county == &quot;McHenry&quot; or county == &quot;mchenry&quot;">
+                                <then>
+                                    <assign variable="percent" expression="0.75"/>
+                                </then>
+                                <else>
+                                    <if expression="county == &quot;Kane&quot; or county == &quot;kane&quot;">
+                                        <then>
+                                            <assign variable="percent" expression="0.60"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="percent" expression="0.70"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="assessedvalue" expression="marketvalue * percent"/>
+        </body>
+    </function>
+</flowgorithm>

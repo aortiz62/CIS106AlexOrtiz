@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m10p1"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-27 12:16:19 AM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yNjsxMTozOTowOCBQTTsyMzk1"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yNzsxMjoxNjoxOSBBTTsxOzI0ODc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="month" type="String" array="False" size=""/>
+            <declare name="sales" type="Real" array="False" size=""/>
+            <declare name="forecastedsales" type="Real" array="False" size=""/>
+            <output expression="&quot;do you want to run the program?&quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response == &quot;yes&quot; or response == &quot;Yes&quot;">
+                <output expression="&quot;enter last name&quot;" newline="True"/>
+                <input variable="lastname"/>
+                <output expression="&quot;enter month&quot;" newline="True"/>
+                <input variable="month"/>
+                <output expression="&quot;Enter current sales:&quot;" newline="True"/>
+                <input variable="sales"/>
+                <assign variable="forecastedSales" expression="computeForecast"/>
+                <output expression="&quot;the forecasted sales are:&quot; &amp;forecastedsales" newline="True"/>
+                <output expression="&quot;do you want to run the program again?&quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+        </body>
+    </function>
+    <function name="computeforecast" type="Real" variable="nextmonthsales">
+        <parameters>
+            <parameter name="month" type="String" array="False"/>
+            <parameter name="sales" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="forecastpercent" type="Real" array="False" size=""/>
+            <if expression="month == &quot;Jan&quot; or month == &quot;Feb&quot; or month == &quot;Mar&quot;">
+                <then>
+                    <assign variable="forecastPercent" expression="0.10"/>
+                </then>
+                <else>
+                    <if expression="month == &quot;Apr&quot; or month == &quot;May&quot; or month == &quot;Jun&quot;">
+                        <then>
+                            <assign variable="forecastPercent" expression="0.15"/>
+                        </then>
+                        <else>
+                            <if expression="month == &quot;Jul&quot; or month == &quot;Aug&quot; or month == &quot;Sep&quot;">
+                                <then>
+                                    <assign variable="forecastPercent" expression="0.20"/>
+                                </then>
+                                <else>
+                                    <assign variable="forecastPercent" expression="0.25"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="nextMonthSales" expression="sales * (1 + forecastPercent)"/>
+        </body>
+    </function>
+</flowgorithm>

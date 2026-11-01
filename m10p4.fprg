@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m10p4"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-28 10:09:49 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yODswOTo1NjowNCBQTTsyMzk5"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMC0yODsxMDowOTo0OSBQTTsxOzI1MDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="miles" type="Real" array="False" size=""/>
+            <declare name="ticketprice" type="Real" array="False" size=""/>
+            <declare name="totalprice" type="Real" array="False" size=""/>
+            <assign variable="totalprice" expression="0"/>
+            <output expression="&quot;do you want to enter a ticket?&quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response == &quot;Yes&quot; or response == &quot;yes&quot;">
+                <output expression="&quot;enter last name&quot;" newline="True"/>
+                <input variable="lastname"/>
+                <output expression="&quot;enter miles&quot;" newline="True"/>
+                <input variable="miles"/>
+                <assign variable="ticketprice" expression="computeticketprice"/>
+                <assign variable="totalprice" expression="totalprice + ticketprice"/>
+                <output expression="&quot;ticket price for&quot; &amp;lastname&amp; &quot;is&quot; &amp;ticketprice" newline="True"/>
+                <output expression="&quot;do you want to enter another ticket?&quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+            <output expression="&quot;The total price for all tickets is $&quot; &amp; totalPrice" newline="True"/>
+        </body>
+    </function>
+    <function name="computeticketprice" type="Integer" variable="price">
+        <parameters>
+            <parameter name="miles" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="price" type="Integer" array="False" size=""/>
+            <if expression="miles &gt;= 30">
+                <then>
+                    <assign variable="price" expression="12"/>
+                </then>
+                <else>
+                    <if expression="miles &gt;= 20">
+                        <then>
+                            <assign variable="price" expression="10"/>
+                        </then>
+                        <else>
+                            <if expression="miles &gt;= 10">
+                                <then>
+                                    <assign variable="price" expression="8"/>
+                                </then>
+                                <else>
+                                    <assign variable="price" expression="5"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
