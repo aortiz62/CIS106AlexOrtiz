@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m11p4"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-11-03 04:27:27 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0wMzswNDowNzowNSBQTTsyMzg1"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0wMzswNDoyNzoyNyBQTTsxOzI0OTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="game1" type="Real" array="False" size=""/>
+            <declare name="game2" type="Real" array="False" size=""/>
+            <declare name="game3" type="Real" array="False" size=""/>
+            <declare name="handicap" type="Real" array="False" size=""/>
+            <declare name="average" type="Real" array="False" size=""/>
+            <declare name="handicapaverage" type="Real" array="False" size=""/>
+            <output expression="&quot;enter bowler last name:&quot;" newline="True"/>
+            <input variable="lastname"/>
+            <output expression="&quot;enter game 1 score:&quot;" newline="True"/>
+            <input variable="game1"/>
+            <output expression="&quot;enter game 2 score:&quot;" newline="True"/>
+            <input variable="game2"/>
+            <output expression="&quot;enter game 3 score:&quot;" newline="True"/>
+            <input variable="game3"/>
+            <output expression="&quot;enter handicap:&quot;" newline="True"/>
+            <input variable="handicap"/>
+            <assign variable="average" expression="getaverage(game1, game2, game3)"/>
+            <assign variable="handicapaverage" expression="gethandicapaverage(average, handicap)"/>
+            <output expression="&quot;player:&quot;&amp;lastname" newline="True"/>
+            <output expression="&quot;average:&quot; &amp;average" newline="True"/>
+            <output expression="&quot;handicap average:&quot; &amp;handicapaverage" newline="True"/>
+        </body>
+    </function>
+    <function name="getaverage" type="Real" variable="avg">
+        <parameters>
+            <parameter name="game1" type="Real" array="False"/>
+            <parameter name="game2" type="Real" array="False"/>
+            <parameter name="game3" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <assign variable="avg" expression="(game1 + game2 + game3) / 3"/>
+        </body>
+    </function>
+    <function name="gethandicapaverage" type="Real" variable="handicapavg">
+        <parameters>
+            <parameter name="scratchavg" type="Real" array="False"/>
+            <parameter name="handicap" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="handicapavg" type="Real" array="False" size=""/>
+            <assign variable="handicapavg" expression="scratchavg + handicap"/>
+        </body>
+    </function>
+</flowgorithm>

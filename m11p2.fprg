@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m11p2"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-11-03 03:56:57 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0wMzswMzozNTo0OCBQTTsyMzky"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0wMzswMzo1Njo1NyBQTTsxOzI1MDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="score1" type="Real" array="False" size=""/>
+            <declare name="score2" type="Real" array="False" size=""/>
+            <declare name="score3" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <declare name="average" type="Real" array="False" size=""/>
+            <output expression="&quot;enter student last name:&quot;" newline="True"/>
+            <input variable="lastname"/>
+            <output expression="&quot;enter score 1&quot;" newline="True"/>
+            <input variable="score1"/>
+            <output expression="&quot;enter score 2&quot;" newline="True"/>
+            <input variable="score2"/>
+            <output expression="&quot;enter score 3&quot;" newline="True"/>
+            <input variable="score3"/>
+            <assign variable="total" expression="gettotal(score1, score2, score3)"/>
+            <assign variable="average" expression="getaverage(total)"/>
+            <output expression="&quot;student:&quot; &amp;lastname" newline="True"/>
+            <output expression="&quot;total points:&quot; &amp;total" newline="True"/>
+            <output expression="&quot;average score:&quot; &amp;average" newline="True"/>
+        </body>
+    </function>
+    <function name="getaverage" type="Real" variable="avg">
+        <parameters>
+            <parameter name="totalpoints" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <assign variable="avg" expression="totalpoint / 3"/>
+        </body>
+    </function>
+    <function name="gettotal" type="Real" variable="total">
+        <parameters>
+            <parameter name="score1" type="Real" array="False"/>
+            <parameter name="score2" type="Real" array="False"/>
+            <parameter name="score3" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="total" expression="score1 + score2 + score3"/>
+        </body>
+    </function>
+</flowgorithm>

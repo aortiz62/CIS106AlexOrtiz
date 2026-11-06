@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m11p3"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-11-03 04:07:02 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0wMzswMzo1OTo0OSBQTTsyMzk5"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0wMzswNDowNzowMiBQTTsxOzI0OTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="sales" type="Real" array="False" size=""/>
+            <declare name="commission" type="Real" array="False" size=""/>
+            <declare name="target" type="Real" array="False" size=""/>
+            <output expression="&quot;enter saleperson lastname&quot;" newline="True"/>
+            <input variable="lastname"/>
+            <output expression="&quot;enter sales amount&quot;" newline="True"/>
+            <input variable="sales"/>
+            <assign variable="commission" expression="getcommission(sales)"/>
+            <assign variable="target" expression="getttarget(sales)"/>
+            <output expression="&quot;salesperson:&quot; &amp;lastname" newline="True"/>
+            <output expression="&quot;commission:&quot; &amp;commission" newline="True"/>
+            <output expression="&quot;next year target:&quot; &amp;target" newline="True"/>
+        </body>
+    </function>
+    <function name="getcommission" type="Real" variable="commission">
+        <parameters>
+            <parameter name="sales" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="commission" type="Real" array="False" size=""/>
+            <if expression="sales &gt; 100000">
+                <then>
+                    <assign variable="commission" expression="sales * 0.10"/>
+                </then>
+                <else>
+                    <assign variable="commission" expression="sales * 0.05"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="gettarget" type="Real" variable="target">
+        <parameters>
+            <parameter name="sales" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="target" type="Real" array="False" size=""/>
+            <assign variable="target" expression="sales * 0.05"/>
+        </body>
+    </function>
+</flowgorithm>
