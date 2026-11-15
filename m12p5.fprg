@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m12p4"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-11-13 03:17:31 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0xMzswMjo1OTo1OSBQTTsyNDAw"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0xMzswMzoxNzozMSBQTTszOzI0OTU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="names" type="String" array="True" size="10"/>
+            <declare name="averages" type="Real" array="True" size="10"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="searchName" type="String" array="False" size=""/>
+            <open expression="&quot;players.txt&quot;" mode="read"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <read variable="names[i]"/>
+                <read variable="averages[i]"/>
+            </for>
+            <close mode="read"/>
+            <call expression="DisplayPlayers(names, averages)"/>
+            <output expression="&quot;Enter a player's last name to search (or type quit to exit):&quot;" newline="True"/>
+            <input variable="searchName"/>
+            <while expression="searchName != &quot;quit&quot;">
+                <call expression="SearchPlayer(names, averages, searchName)"/>
+                <output expression="&quot;Enter another last name to search (or type quit to exit):&quot;" newline="True"/>
+                <input variable="searchName"/>
+            </while>
+        </body>
+    </function>
+    <function name="DisplayPlayers" type="None" variable="">
+        <parameters>
+            <parameter name="arrNames" type="String" array="True"/>
+            <parameter name="arrAverages" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <output expression="&quot;Player Roster and Batting Averages:&quot;" newline="True"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <output expression="arrNames[i] &amp; &quot; - &quot; &amp; arrAverages[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="SearchPlayer" type="None" variable="">
+        <parameters>
+            <parameter name="arrNames" type="String" array="True"/>
+            <parameter name="arrAverages" type="Real" array="True"/>
+            <parameter name="target" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="found" type="Boolean" array="False" size=""/>
+            <assign variable="found" expression="false"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <if expression="arrNames[i] == target">
+                    <then>
+                        <output expression="&quot;Found: &quot; &amp; arrNames[i] &amp; &quot; - Batting Average: &quot; &amp; arrAverages[i]" newline="True"/>
+                        <assign variable="found" expression="false"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <if expression="found == false">
+                <then>
+                    <output expression="&quot;Name not found&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

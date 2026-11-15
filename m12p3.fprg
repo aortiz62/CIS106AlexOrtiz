@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="m12p1"/>
+        <attribute name="authors" value="mekam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-11-13 02:55:35 PM"/>
+        <attribute name="created" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0xMzswMTowMzoxNCBQTTsyMzc5"/>
+        <attribute name="edited" value="bWVrYW07R1JFRU5URUE7MjAyNi0xMS0xMzswMjo1NTozNSBQTTs1OzI1MDI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="names" type="String" array="True" size="10"/>
+            <declare name="scores" type="Integer" array="True" size="10"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <open expression="&quot;students.txt&quot;" mode="read"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <read variable="scores[i]"/>
+            </for>
+            <close mode="read"/>
+            <call expression="DisplayNames(names, scores)"/>
+            <call expression="DisplayReverse(names, scores)"/>
+            <call expression="DisplayHighLow(names, scores)"/>
+            <assign variable="names[0]" expression="&quot;Smith&quot;"/>
+            <assign variable="names[1]" expression="&quot;Johnson&quot;"/>
+            <assign variable="names[2]" expression="&quot;Williams&quot;"/>
+            <assign variable="names[3]" expression="&quot;Brown&quot;"/>
+            <assign variable="names[4]" expression="&quot;Jones&quot;"/>
+            <assign variable="names[5]" expression="&quot;Garcia&quot;"/>
+            <assign variable="names[6]" expression="&quot;Miller&quot;"/>
+            <assign variable="names[7]" expression="&quot;Davis&quot;"/>
+            <assign variable="names[8]" expression="&quot;Rodriguez&quot;"/>
+            <assign variable="names[9]" expression="&quot;Martinez&quot;"/>
+            <assign variable="scores" expression="88"/>
+            <assign variable="scores" expression="92"/>
+            <assign variable="scores" expression="79"/>
+            <assign variable="scores" expression="95"/>
+            <assign variable="scores" expression="84"/>
+            <assign variable="scores" expression="91"/>
+            <assign variable="scores" expression="76"/>
+            <assign variable="scores" expression="89"/>
+            <assign variable="scores" expression="94"/>
+            <assign variable="scores" expression="82"/>
+            <call expression="DisplayNames(names, scores)"/>
+            <call expression="DisplayReverse(names, scores)"/>
+        </body>
+    </function>
+    <function name="DisplayHighLow" type="None" variable="">
+        <parameters>
+            <parameter name="arr" type="String" array="True"/>
+            <parameter name="examScores" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="highIndex" type="Integer" array="False" size=""/>
+            <declare name="lowIndex" type="Integer" array="False" size=""/>
+            <assign variable="highIndex" expression="0"/>
+            <assign variable="lowIndex" expression="0"/>
+            <for variable="i" start="1" end="9" direction="inc" step="1">
+                <if expression="examScores[i] &gt; examScores[highIndex]">
+                    <then>
+                        <assign variable="highIndex" expression="i"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="examScores[i] &lt; examScores[lowIndex]">
+                    <then>
+                        <assign variable="lowIndex" expression="i"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;Highest Score: &quot; &amp; arr[highIndex] &amp; &quot; - &quot; &amp; examScores[highIndex]" newline="True"/>
+            <output expression="&quot;Lowest Score: &quot; &amp; arr[lowIndex] &amp; &quot; - &quot; &amp; examScores[lowIndex]" newline="True"/>
+        </body>
+    </function>
+    <function name="DisplayNames" type="None" variable="">
+        <parameters>
+            <parameter name="arr" type="String" array="True"/>
+            <parameter name="examScores" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <output expression="&quot;Names in original order:&quot;" newline="True"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <output expression="arr[i] &amp; &quot;: &quot; &amp; examScores[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="DisplayReverse" type="None" variable="">
+        <parameters>
+            <parameter name="arr" type="String" array="True"/>
+            <parameter name="examScores" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <output expression="&quot;Names in reverse order:&quot;" newline="True"/>
+            <for variable="i" start="9" end="0" direction="dec" step="1">
+                <output expression="arr[i] &amp; &quot;: &quot; &amp; examScores[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
