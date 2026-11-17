@@ -10,3 +10,5 @@ students = {
     "Rodriguez": 94,
     "Martinez": 82
 }
+print(f"{'Student Name':<15} {'Grade':<10}")
+print("-" * 25)
