@@ -18,3 +18,12 @@ def main():
         "Rodriguez": (94, 92, 96),
         "Martinez": (82, 85, 80)
     }
+
+averages_list = calculate_student_averages(students)
+
+    print(f"{'Student Name':<15} {'Average Grade':<15}")
+    print("-" * 30)
+    for item in averages_list:
+        name = item.pop(0)
+        avg = item.pop(0)
+        print(f"{name:<15} {avg:<15.2f}")
