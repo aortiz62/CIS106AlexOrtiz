@@ -27,3 +27,23 @@ averages_list = calculate_student_averages(students)
         name = item.pop(0)
         avg = item.pop(0)
         print(f"{name:<15} {avg:<15.2f}")
+
+print("\n" + "=" * 30 + "\n")
+
+    num_students = len(students)
+    grade1_total = 0
+    grade2_total = 0
+    grade3_total = 0
+
+    for g1, g2, g3 in students.values():
+        grade1_total += g1
+        grade2_total += g2
+        grade3_total += g3
+
+    print(f"{'Assignment':<15} {'Class Average':<15}")
+    print("-" * 30)
+    print(f"{'Grade 1':<15} {grade1_total / num_students:<15.2f}")
+    print(f"{'Grade 2':<15} {grade2_total / num_students:<15.2f}")
+    print(f"{'Grade 3':<15} {grade3_total / num_students:<15.2f}")
+
+main()
