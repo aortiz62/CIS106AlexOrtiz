@@ -18,3 +18,8 @@ total = 0
 for name, grade in students.items():
     print(f"{name:<15} {grade:<10}")
     total += grade
+    
+average = total / len(students)
+
+print("-" * 25)
+print(f"{'Class Average':<15} {average:<10.2f}")
