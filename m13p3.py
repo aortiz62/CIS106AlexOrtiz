@@ -1,8 +1,8 @@
 def print_players(player_dict):
-    print(f"{'Player Name':<15} {'Batting Avg':<12}")
+    print("{:<15} {:<12}".format("Player Name", "Batting Avg"))
     print("-" * 27)
     for name, avg in player_dict.items():
-        print(f"{name:<15} {avg:<12.3f}")
+        print("{:<15} {:<12.3f}".format(name, avg))
 
 def main():
     players = {}
