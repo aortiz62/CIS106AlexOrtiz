@@ -10,5 +10,11 @@ students = {
     "Rodriguez": 94,
     "Martinez": 82
 }
+
 print(f"{'Student Name':<15} {'Grade':<10}")
 print("-" * 25)
+
+total = 0
+for name, grade in students.items():
+    print(f"{name:<15} {grade:<10}")
+    total += grade
